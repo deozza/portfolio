@@ -6,11 +6,16 @@ const config: NuxtConfig = {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'portfolio',
+    title: 'Edenn Touitou | Fullstack developer portfolio',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          "Welcome to my portfolio. I'm a fullstack developer from France. with a strong backend background. I am also a self-teached guitarist and bassist, gamer, pc builder. Let's dive into my world, shall we ?",
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
