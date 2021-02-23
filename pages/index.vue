@@ -211,7 +211,7 @@ export default defineComponent({
   },
   methods: {
     goToRepo(repo: string) {
-      const win = window.open('https://github.com/deozza/' + repo, '_blank')
+      const win = window.open('https://github.com/deozza/' + repo, '_blank')!
       win.focus()
     },
   },
