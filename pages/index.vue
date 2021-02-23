@@ -2,19 +2,20 @@
   <div>
     <section class="flex-column presentation">
       <div class="flex-row flex-between" style="width: 50vw; height: 100vh">
-        <BaseParagraph visual-type="dark"
+        <BaseParagraph visual-type="dark" class="portfolio-description"
           >Welcome to my portfolio. I'm a fullstack developer from France. with
-          a strong backend background.</BaseParagraph
+          a strong backend background. I am also a self-teached guitarist and
+          bassist, gamer, pc builder. Let's dive into my world, shall we ?</BaseParagraph
         >
       </div>
     </section>
 
     <section
       class="flex-column"
-      style="background-color: rgba(254, 226, 226, 1)"
+      style="background-color: var(--secondary_bg)"
     >
       <BaseHeader html-type="h2">Working with me is</BaseHeader>
-      <div class="flex-row flex-around" style="width: 70vw">
+      <div class="flex-row flex-around" style="width: 70vw; height: 50vh">
         <BaseCardIndex
           v-for="(card, index) of aboutMeCards"
           :key="index"
@@ -22,62 +23,39 @@
         />
       </div>
     </section>
-    <section class="flex-column" style="width: 100%">
-      <BaseHeader html-type="h2">The tech I used</BaseHeader>
-      <div class="flex-column" style="width: 100%">
-        <div class="flex-row flex-around" style="width: 100%">
-          <img
-            src="~/assets/img/logo/symfony.png"
-            alt="symfony-logo"
-            width="128px"
-          />
-          <BaseParagraph>Coucou</BaseParagraph>
-        </div>
-        <div class="flex-row flex-around" style="width: 100%">
-          <BaseParagraph>Coucou</BaseParagraph>
-          <img
-            src="~/assets/img/logo/api-platform.png"
-            alt="api-platform-logo"
-            width="128px"
-          />
-        </div>
-        <div class="flex-row flex-around" style="width: 100%">
-          <img
-            src="~/assets/img/logo/nuxtjs.png"
-            alt="nuxtjs-logo"
-            width="128px"
-          />
-          <BaseParagraph>Coucou</BaseParagraph>
-        </div>
-        <div class="flex-row flex-around" style="width: 100%">
-          <BaseParagraph>Coucou</BaseParagraph>
-          <img
-            src="~/assets/img/logo/docker.png"
-            alt="docker-logo"
-            width="128px"
-          />
-        </div>
-        <div class="flex-row flex-around" style="width: 100%">
-          <img
-            src="~/assets/img/logo/firebase.png"
-            alt="firebase-logo"
-            width="128px"
-          />
-          <BaseParagraph>Coucou</BaseParagraph>
-        </div>
-        <div class="flex-row flex-around" style="width: 100%">
-          <BaseParagraph>Coucou</BaseParagraph>
-          <img
-            src="~/assets/img/logo/graphql.png"
-            alt="grapqhl-logo"
-            width="128px"
-          />
-        </div>
+    <section class="flex-column" style="width: 100%; height: 50vh">
+      <BaseHeader html-type="h2">The tech I love</BaseHeader>
+      <div class="flex-row" style="width: 100%">
+        <img
+          src="~/assets/img/logo/api-platform.png"
+          alt="api-platform-logo"
+          width="128px"
+        />
+        <img
+          src="~/assets/img/logo/nuxtjs.png"
+          alt="nuxtjs-logo"
+          width="128px"
+        />
+        <img
+          src="~/assets/img/logo/docker.png"
+          alt="docker-logo"
+          width="128px"
+        />
+        <img
+          src="~/assets/img/logo/firebase.png"
+          alt="firebase-logo"
+          width="128px"
+        />
+        <img
+          src="~/assets/img/logo/graphql.png"
+          alt="grapqhl-logo"
+          width="128px"
+        />
       </div>
     </section>
     <section
       class="flex-column"
-      style="background-color: rgba(253, 230, 138, 1)"
+      style="background-color: var(--primary_bg)"
     >
       <BaseHeader html-type="h2">I worked with</BaseHeader>
       <div class="flex-row flex-around" style="width: 100%">
@@ -88,18 +66,36 @@
         />
       </div>
     </section>
-    <section class="flex-column">
-      <BaseHeader html-type="h2">Some personal projects</BaseHeader>
+    <section class="flex-column" style="background-color: black">
+      <BaseHeader html-type="h2" visual-type="dark">Some personal projects</BaseHeader>
       <div class="flex-column" style="height: 100vh; width: 100%">
         <div class="flex-row flex-between" style="height: 100%; width: 100%">
           <div class="philarmony flex-column" style="height: 100%; width: 50%">
             <BaseParagraph visual-type="dark" class="project-title"
               >Philarmony</BaseParagraph
             >
+            <div style="text-align: center; width: 70%; padding: 12px 0">
+              <BaseParagraph visual-type="dark">Philarmony was meant to ease creation and maintenance of REST APIs on top of Symfony 4. All the data scheme, endpoints, forms, worflows and authorizations are based on 4 YAML config files.</BaseParagraph>
+            </div>
+            <BaseButton
+              visual-type="secondary"
+              icon="fab fa-github"
+              @buttonClicked="goToRepo('PhilarmonyCore')"
+              >Know more</BaseButton
+            >
           </div>
           <div class="atomnuxt flex-column" style="height: 100%; width: 50%">
             <BaseParagraph visual-type="dark" class="project-title"
               >Atomnuxt</BaseParagraph
+            >
+            <div style="text-align: center; width: 70%; padding: 12px 0">
+              <BaseParagraph visual-type="dark">Atomnuxt is a try to push the limits of atomic design and component based design with Nuxtjs.</BaseParagraph>
+            </div>
+            <BaseButton
+              visual-type="secondary"
+              icon="fab fa-github"
+              @buttonClicked="goToRepo('atomnuxt')"
+            >Know more</BaseButton
             >
           </div>
         </div>
@@ -108,10 +104,28 @@
             <BaseParagraph visual-type="dark" class="project-title"
               >Letsjam</BaseParagraph
             >
+            <div style="text-align: center; width: 70%; padding: 12px 0">
+              <BaseParagraph visual-type="dark">Letsjam is a blog for audiophiles and musicians, developped with Nuxtjs, Firebase and Graphql.</BaseParagraph>
+            </div>
+            <BaseButton
+              visual-type="secondary"
+              icon="fab fa-github"
+              @buttonClicked="goToRepo('letsjam-ssg')"
+            >Know more</BaseButton
+            >
           </div>
-          <div class="atomnuxt flex-column" style="height: 100%; width: 50%">
+          <div class="appquarium flex-column" style="height: 100%; width: 50%">
             <BaseParagraph visual-type="dark" class="project-title"
-              >Atomnuxt</BaseParagraph
+              >Appquarium</BaseParagraph
+            >
+            <div style="text-align: center; width: 70%; padding: 12px 0">
+              <BaseParagraph visual-type="dark">Appquarium is an aquariophile web database, developped with Api-Platform and Docker, in the form of a micro-architecture API.</BaseParagraph>
+            </div>
+            <BaseButton
+              visual-type="secondary"
+              icon="fab fa-github"
+              @buttonClicked="goToRepo('?tab=repositories&q=appquarium&type=&language=')"
+            >Know more</BaseButton
             >
           </div>
         </div>
@@ -122,10 +136,11 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'
-import BaseParagraph from '@/components/Atoms/Typography/Paragraph/BaseParagraph'
-import BaseHeader from '@/components/Atoms/Typography/Header/BaseHeader'
+import BaseParagraph from '@/components/Atoms/Typography/Paragraph/BaseParagraph.vue'
+import BaseHeader from '@/components/Atoms/Typography/Header/BaseHeader.vue'
 import BaseCardIndex from '~/components/Molecules/Cards/Cardsindex/BaseCardIndex.vue'
 import CardIndexModele from '~/components/Molecules/Cards/Cardsindex/CardIndexModele'
+import BaseButton from '~/components/Atoms/Button/BaseButton.vue'
 
 export default defineComponent({
   name: 'IndexPage',
@@ -133,13 +148,14 @@ export default defineComponent({
     BaseParagraph,
     BaseHeader,
     BaseCardIndex,
+    BaseButton,
   },
   setup() {
     const futureCard: CardIndexModele = new CardIndexModele(
       require('~/assets/img/startup.svg'),
       'future-card',
       'Future proofed',
-      'I always code with the future in mind. To make maintenance easier.'
+      'I always code with the future in mind. To make my job and the job of the others easier.'
     )
 
     const testCard: CardIndexModele = new CardIndexModele(
@@ -193,6 +209,12 @@ export default defineComponent({
       workCards,
     }
   },
+  methods: {
+    goToRepo(repo: string) {
+      const win = window.open('https://github.com/deozza/' + repo, '_blank')
+      win.focus()
+    },
+  },
 })
 </script>
 
@@ -230,7 +252,20 @@ section.presentation {
   background-size: cover;
 }
 
+.appquarium {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url(assets/img/appquarium.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .project-title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.portfolio-description {
+  text-align: center;
   font-size: 1.875rem;
   line-height: 2.25rem;
 }

@@ -1,22 +1,20 @@
 <template>
   <div>
-    <HorizontalNavbar :links="menuLinks" logo="" theme="dark" />
+    <!-- <HorizontalNavbar :links="menuLinks" logo="" theme="dark" /> -->
     <section class="header flex-column">
       <BaseHeader html-type="h1" visual-type="light"
         >Hello, I'm Edenn Touitou</BaseHeader
       >
-      <BaseParagraph visual-type="light"
-                     class="sub-header"
-        >A fullstack developper, amateur musician and much
-        more...</BaseParagraph
+      <BaseParagraph visual-type="light" class="sub-header"
+        >A fullstack developper and much more...</BaseParagraph
       >
     </section>
-    <div class="content">
+    <div id="content" class="content">
       <Nuxt />
     </div>
     <BaseFooter
       theme="dark"
-      copyright="letsjam"
+      copyright="Built with Nuxtjs, Atomnuxt and passion."
       :links="menuLinks"
     ></BaseFooter>
   </div>
@@ -25,21 +23,21 @@
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'
 import BaseLinkModele from '../components/Atoms/Link/BaseLinkModele'
-import HorizontalNavbar from '~/components/Molecules/Menu/HorizontalNavbar.vue'
 import BaseFooter from '~/components/Molecules/Footer/BaseFooter.vue'
 import BaseHeader from '~/components/Atoms/Typography/Header/BaseHeader.vue'
 import BaseParagraph from '~/components/Atoms/Typography/Paragraph/BaseParagraph.vue'
+import BaseButton from '~/components/Atoms/Button/BaseButton.vue'
 
 export default defineComponent({
   name: 'IndexLayoutVue',
   components: {
-    HorizontalNavbar,
     BaseFooter,
     BaseHeader,
     BaseParagraph,
+    BaseButton
   },
   setup() {
-    const homeLink: BaseLinkModele = new BaseLinkModele(['#'], 'Home', true, '')
+    /* const homeLink: BaseLinkModele = new BaseLinkModele(['#'], 'Home', true, '')
     const aboutLink: BaseLinkModele = new BaseLinkModele(
       ['#'],
       'About',
@@ -58,12 +56,12 @@ export default defineComponent({
       true,
       ''
     )
-
+*/
     const menuLinks: Array<BaseLinkModele> = [
-      homeLink,
+      /* homeLink,
       aboutLink,
       blogLink,
-      contactLink,
+      contactLink, */
     ]
 
     return {
@@ -75,14 +73,13 @@ export default defineComponent({
 
 <style scoped>
 div div.content {
-  min-height: calc(100vh - 72px);
+  min-height: 100vh;
 }
 
 div section.header {
-  margin-top: 72px;
   height: 100vh;
   width: 100%;
-  background-color: rgba(253, 230, 138, 1);
+  background-color: var(--primary_bg);
 }
 
 div section.header p.sub-header {

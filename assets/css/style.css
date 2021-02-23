@@ -135,18 +135,18 @@ html {
 
 :root {
   --grey-bg: #dbdde6;
-  --primary_bg: #0d6efd;
-  --primary_bg_hover: #240dfd;
-  --primary_border: #0d6efd;
-  --primary_border_hover: #240dfd;
-  --primary_text: #0d6efd;
-  --primary_text_hover: #240dfd;
-  --secondary_bg: #e5e7e8;
-  --secondary_bg_hover: #caced0;
-  --secondary_border: #e5e7e8;
-  --secondary_border_hover: #caced0;
-  --secondary_text: #e5e7e8;
-  --secondary_text-hover: #caced0;
+  --primary_bg: rgba(253, 230, 138, 1);
+  --primary_bg_hover: rgba(251, 191, 36, 1);
+  --primary_border: rgba(253, 230, 138, 1);
+  --primary_border_hover: rgba(251, 191, 36, 1);
+  --primary_text: rgba(253, 230, 138, 1);
+  --primary_text_hover: rgba(251, 191, 36, 1);
+  --secondary_bg: rgba(254, 226, 226, 1);
+  --secondary_bg_hover: rgba(249, 168, 212, 1);
+  --secondary_border: rgba(254, 226, 226, 1);
+  --secondary_border_hover: rgba(249, 168, 212, 1);
+  --secondary_text: rgba(254, 226, 226, 1);
+  --secondary_text-hover: rgba(249, 168, 212, 1);
   --success_bg: #28a745;
   --success_bg_hover: #218838;
   --success_border: #28a745;
