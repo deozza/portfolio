@@ -1,6 +1,10 @@
 <template>
   <div class="flex-column card">
-    <img :src="cardContent.img" :alt="cardContent.imgAlt" :width="cardContent.imgSize" />
+    <img
+      :src="cardContent.img"
+      :alt="cardContent.imgAlt"
+      :width="cardContent.imgSize"
+    />
     <BaseParagraph class="card-title">{{ cardContent.title }}</BaseParagraph>
     <BaseParagraph class="card-text">{{ cardContent.text }}</BaseParagraph>
   </div>
@@ -38,5 +42,11 @@ div.card p.card-title {
 
 div.card p.card-text {
   text-align: center;
+}
+
+@media only screen and (max-width: 1024px) {
+  div.card {
+    padding: 6px;
+  }
 }
 </style>

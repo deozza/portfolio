@@ -1,21 +1,19 @@
 <template>
   <div>
     <section class="flex-column presentation">
-      <div class="flex-row flex-between" style="width: 50vw; height: 100vh">
+      <div class="flex-row flex-between portfolio-description-container">
         <BaseParagraph visual-type="dark" class="portfolio-description"
           >Welcome to my portfolio. I'm a fullstack developer from France. with
           a strong backend background. I am also a self-teached guitarist and
-          bassist, gamer, pc builder. Let's dive into my world, shall we ?</BaseParagraph
+          bassist, gamer, pc builder. Let's dive into my world, shall we
+          ?</BaseParagraph
         >
       </div>
     </section>
 
-    <section
-      class="flex-column"
-      style="background-color: var(--secondary_bg)"
-    >
+    <section class="flex-column working-container">
       <BaseHeader html-type="h2">Working with me is</BaseHeader>
-      <div class="flex-row flex-around" style="width: 70vw; height: 50vh">
+      <div class="flex-row flex-around">
         <BaseCardIndex
           v-for="(card, index) of aboutMeCards"
           :key="index"
@@ -23,9 +21,9 @@
         />
       </div>
     </section>
-    <section class="flex-column" style="width: 100%; height: 50vh">
+    <section class="flex-column tech-container">
       <BaseHeader html-type="h2">The tech I love</BaseHeader>
-      <div class="flex-row" style="width: 100%">
+      <div class="flex-row">
         <img
           src="~/assets/img/logo/api-platform.png"
           alt="api-platform-logo"
@@ -53,12 +51,9 @@
         />
       </div>
     </section>
-    <section
-      class="flex-column"
-      style="background-color: var(--primary_bg)"
-    >
+    <section class="flex-column companies-container">
       <BaseHeader html-type="h2">I worked with</BaseHeader>
-      <div class="flex-row flex-around" style="width: 100%">
+      <div class="flex-row flex-around">
         <BaseCardIndex
           v-for="(card, index) of workCards"
           :key="index"
@@ -66,16 +61,26 @@
         />
       </div>
     </section>
-    <section class="flex-column" style="background-color: black">
-      <BaseHeader html-type="h2" visual-type="dark">Some personal projects</BaseHeader>
-      <div class="flex-column" style="height: 100vh; width: 100%">
+    <section class="flex-column projects-container">
+      <BaseHeader html-type="h2" visual-type="dark"
+        >Some personal projects</BaseHeader
+      >
+      <div class="flex-column">
         <div class="flex-row flex-between" style="height: 100%; width: 100%">
           <div class="philarmony flex-column" style="height: 100%; width: 50%">
             <BaseParagraph visual-type="dark" class="project-title"
               >Philarmony</BaseParagraph
             >
-            <div style="text-align: center; width: 70%; padding: 12px 0">
-              <BaseParagraph visual-type="dark">Philarmony was meant to ease creation and maintenance of REST APIs on top of Symfony 4. All the data scheme, endpoints, forms, worflows and authorizations are based on 4 YAML config files.</BaseParagraph>
+            <div
+              class="hide-mobile"
+              style="text-align: center; width: 70%; padding: 12px 0"
+            >
+              <BaseParagraph visual-type="dark"
+                >Philarmony was meant to ease creation and maintenance of REST
+                APIs on top of Symfony 4. All the data scheme, endpoints, forms,
+                worflows and authorizations are based on 4 YAML config
+                files.</BaseParagraph
+              >
             </div>
             <BaseButton
               visual-type="secondary"
@@ -88,14 +93,20 @@
             <BaseParagraph visual-type="dark" class="project-title"
               >Atomnuxt</BaseParagraph
             >
-            <div style="text-align: center; width: 70%; padding: 12px 0">
-              <BaseParagraph visual-type="dark">Atomnuxt is a try to push the limits of atomic design and component based design with Nuxtjs.</BaseParagraph>
+            <div
+              class="hide-mobile"
+              style="text-align: center; width: 70%; padding: 12px 0"
+            >
+              <BaseParagraph visual-type="dark"
+                >Atomnuxt is a try to push the limits of atomic design and
+                component based design with Nuxtjs.</BaseParagraph
+              >
             </div>
             <BaseButton
               visual-type="secondary"
               icon="fab fa-github"
               @buttonClicked="goToRepo('atomnuxt')"
-            >Know more</BaseButton
+              >Know more</BaseButton
             >
           </div>
         </div>
@@ -104,28 +115,43 @@
             <BaseParagraph visual-type="dark" class="project-title"
               >Letsjam</BaseParagraph
             >
-            <div style="text-align: center; width: 70%; padding: 12px 0">
-              <BaseParagraph visual-type="dark">Letsjam is a blog for audiophiles and musicians, developped with Nuxtjs, Firebase and Graphql.</BaseParagraph>
+            <div
+              class="hide-mobile"
+              style="text-align: center; width: 70%; padding: 12px 0"
+            >
+              <BaseParagraph visual-type="dark"
+                >Letsjam is a blog for audiophiles and musicians, developped
+                with Nuxtjs, Firebase and Graphql.</BaseParagraph
+              >
             </div>
             <BaseButton
               visual-type="secondary"
               icon="fab fa-github"
               @buttonClicked="goToRepo('letsjam-ssg')"
-            >Know more</BaseButton
+              >Know more</BaseButton
             >
           </div>
           <div class="appquarium flex-column" style="height: 100%; width: 50%">
             <BaseParagraph visual-type="dark" class="project-title"
               >Appquarium</BaseParagraph
             >
-            <div style="text-align: center; width: 70%; padding: 12px 0">
-              <BaseParagraph visual-type="dark">Appquarium is an aquariophile web database, developped with Api-Platform and Docker, in the form of a micro-architecture API.</BaseParagraph>
+            <div
+              class="hide-mobile"
+              style="text-align: center; width: 70%; padding: 12px 0"
+            >
+              <BaseParagraph visual-type="dark"
+                >Appquarium is an aquariophile web database, developped with
+                Api-Platform and Docker, in the form of a micro-architecture
+                API.</BaseParagraph
+              >
             </div>
             <BaseButton
               visual-type="secondary"
               icon="fab fa-github"
-              @buttonClicked="goToRepo('?tab=repositories&q=appquarium&type=&language=')"
-            >Know more</BaseButton
+              @buttonClicked="
+                goToRepo('?tab=repositories&q=appquarium&type=&language=')
+              "
+              >Know more</BaseButton
             >
           </div>
         </div>
@@ -254,7 +280,7 @@ section.presentation {
 
 .appquarium {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-  url(assets/img/appquarium.jpg);
+    url(assets/img/appquarium.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -264,9 +290,61 @@ section.presentation {
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
+
+.portfolio-description-container {
+  width: 50vw;
+  min-height: 100vh;
+}
+
 .portfolio-description {
   text-align: center;
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+section.working-container {
+  background-color: var(--secondary_bg);
+}
+
+section.working-container div {
+  width: 70vw;
+  min-height: 50vh;
+}
+
+section.tech-container {
+  width: 100%;
+  min-height: 50vh;
+}
+
+section.tech-container div.flex-row {
+  width: 100%;
+}
+
+section.companies-container {
+  background-color: var(--primary_bg);
+}
+
+section.companies-container div.flex-row {
+  width: 100%;
+}
+
+section.projects-container {
+  background-color: black;
+}
+
+section.projects-container div.flex-column {
+  min-height: 100vh;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .portfolio-description-container {
+    width: 80vw;
+  }
+
+  .portfolio-description {
+    font-size: 18px;
+    text-align: left;
+  }
 }
 </style>

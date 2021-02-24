@@ -133,4 +133,10 @@ h6 {
 .h-info {
   color: var(--info_text);
 }
+
+@media only screen and (max-width: 1024px) {
+  h1 {
+    font-size: 36px;
+  }
+}
 </style>
